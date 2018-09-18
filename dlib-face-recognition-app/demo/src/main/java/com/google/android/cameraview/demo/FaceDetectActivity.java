@@ -75,14 +75,17 @@ public class FaceDetectActivity extends AppCompatActivity {
                 int max = duration / 1000;
                 int index = 0;
                 final StringBuilder sb = new StringBuilder();
+                TimeRecorder recorder = new TimeRecorder("face");
                 while (index <= max){
                     final Bitmap bitmap = retriever.getFrameAtTime(index * 1000 * 1000);
                     if(bitmap == null){
                         break;
                     }
                     sb.append(index);
+                    recorder.begin();
                     List<VisionDetRet> rets = faceRec.detect(bitmap);
-                    Log.d(TAG ,"read frame success, index = " + index);
+                    recorder.end();
+                    Log.d(TAG ,"read frame success," + recorder.toString("index = " + index));
                     //0,0.1 0.1 0.1 0.1
                    // if(rets != null &&)
                     if(!Predicates.isEmpty(rets)){

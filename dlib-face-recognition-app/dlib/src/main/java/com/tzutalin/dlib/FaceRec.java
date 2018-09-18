@@ -24,13 +24,10 @@ public class FaceRec {
     private String dir_path = "";
 
     static {
-        try {
-            System.loadLibrary("android_dlib");
-            jniNativeClassInit();
-            Log.d(TAG, "jniNativeClassInit success");
-        } catch (UnsatisfiedLinkError e) {
-            Log.e(TAG, "library not found");
-        }
+        System.loadLibrary("android_dlib");
+       // System.loadLibrary("people_det");
+        jniNativeClassInit();
+        Log.d(TAG, "jniNativeClassInit success");
     }
 
     public FaceRec(String sample_dir_path) {
