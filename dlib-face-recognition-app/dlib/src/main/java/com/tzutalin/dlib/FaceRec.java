@@ -38,11 +38,9 @@ public class FaceRec {
         jniInit(dir_path);
     }
 
-    @Nullable
     @WorkerThread
     public void train() {
         jniTrain();
-        return;
     }
 
     @Nullable

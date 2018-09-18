@@ -116,6 +116,13 @@ public final class VisionDetRet {
         return mLandmarkPoints;
     }
 
+    public int getWidth(){
+        return getRight() - getLeft();
+    }
+    public int getHeight(){
+        return getBottom() - getTop();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

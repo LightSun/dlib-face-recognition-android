@@ -108,7 +108,8 @@ public class MainActivity extends AppCompatActivity implements
                     }
                     break;
                 case R.id.add_person:
-                    Intent i = new Intent(MainActivity.this, AddPerson.class);
+                   //todo  Intent i = new Intent(MainActivity.this, AddPerson.class);
+                    Intent i = new Intent(MainActivity.this, FaceDetectActivity.class);
                     startActivity(i);
                     finish();
                     break;
